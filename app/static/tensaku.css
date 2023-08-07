@@ -1,0 +1,261 @@
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+    background-image: url("white1.jpg"); /* 画像のURLを指定     */
+    background-position: center; /* 画像の表示位置を指定 */
+    background-size: cover; /* 画像のサイズを指定  */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.diff_add {
+    background-color: #aaffaa
+}
+
+.diff_chg {
+    background-color: #ffff77
+}
+
+.diff_sub {
+    background-color: #ffaaaa
+}
+
+table {
+    margin: 20px auto;
+    border: 1px solid #aaa;
+}
+
+thead, th, tbody {
+    border: 1px solid #aaa;
+}
+
+th {
+    background: #e0e0e0;
+}
+
+td {
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    vertical-align: top;
+    padding: .4em;
+}
+
+td[nowrap="nowrap"] {
+    white-space: pre-line !important;
+    word-break: break-word;
+}
+
+td.diff_header {
+    background: none;
+    font-weight: bold;
+    color: #aaa;
+    text-align: right;
+    font-size: .95em;
+    max-width: 20px;
+}
+
+tr.filler td {
+    line-height: 0.5;
+}
+
+tr.filler td.diff_header::after {
+    content: "\fe19";
+    font-size: .8em;
+}
+
+.diff_next {
+    display: none;
+}
+
+.diff_add {
+    background-color: #4ccc78;
+}
+
+.diff_chg {
+    background-color: #ffdd33;
+}
+
+.diff_sub {
+    background-color: #ed7a7a;
+    color: #fff;
+}
+
+#list {
+    width: 54vw;
+    height: 170px;
+    overflow: scroll;
+}
+
+header {
+    height: 100px;
+    width: 100vw;
+    background-color: whitesmoke;
+    z-index: 10;
+    display: flex;
+}
+
+.menu_header {
+    top: 100px;
+    margin: 0;
+}
+
+nav {
+    margin: 0 0 0 auto;
+}
+
+nav li {
+    margin-top: 40px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0 16px 0 0;
+    margin: 0;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+    position: relative; /* アンダーバーの位置を決めるための基準 */
+}
+
+/*▽▽ヘッダーリストのアンダーバー▽▽*/
+li ::after {
+    position: absolute; /*親要素であるaタグを基準に位置を指定*/
+    bottom: 10px; /*アンダーバーが位置する、各リストの下端からの高さ*/
+    left: 0; /*アンダーバーを各リストの左端に指定*/
+    content: ''; /*本来は、擬似要素に入るテキストなどを’’内に指定。今回はアンダーバーなので何も記載しない*/
+    width: 100%; /*アンダーバーの幅は各リストの幅*/
+    height: 2px; /*アンダーバーの高さ（太さ）*/
+    background: #000000; /*アンダーバーの色*/
+    transform: scale(0, 1); /*アンダーバーの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: center top; /*変形（アンダーバーの伸長）の原点を、liの真ん中指定*/
+    transition: transform 0.75s; /*変形の時間*/
+}
+
+li :hover::after {
+    transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+}
+
+/*△△ヘッダーリストのアンダーバー△△*/
+h2 {
+    color: black;
+    border-bottom: 3px solid;
+    width: 300px;
+}
+
+textarea {
+    display: block;
+    padding: 40px;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*img{*/
+/*    width:100px;*/
+/*    height:130px;*/
+/*}*/
+
+.wrap {
+    display: flex;
+}
+
+.left {
+    display: block;
+    height: 500px;
+    width: 50%;
+}
+
+#input {
+    resize: none;
+    border: 2px solid black; /* 枠線 */
+    padding: 0.5em; /* 内側の余白量 */
+    background-color: snow; /* 背景色 */
+    height: 120px; /* 高さ */
+    font-size: 1.5em; /* 文字サイズ */
+    line-height: 1.5; /* 行の高さ */
+    width: 600px; /* 横幅 */
+    height: 350px;
+
+}
+
+.teacher {
+    top: -100px
+}
+
+#output {
+    border: 2px solid black; /* 枠線 */
+    padding: 0.5em; /* 内側の余白量 */
+    background-color: snow; /* 背景色 */
+    height: 120px; /* 高さ */
+    font-size: 1.5em; /* 文字サイズ */
+    line-height: 1.5; /* 行の高さ */
+    width: 500px; /* 横幅 */
+    height: 350px;
+}
+
+.ugoke {
+    position: right;
+}
+
+.error {
+    height: 200px;
+    overflow: scroll;
+}
+
+.right {
+    width: 500px;
+}
+
+#list {
+    color: red;
+}
+
+.underline {
+    text-decoration: underline wavy red;
+}
+
+.tekito {
+    height: 50px;
+    width: 100px;
+    overflow-y: scroll;
+}
+
+.btn {
+    border-radius: 20%;
+    padding: .5em;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    background: #fff;
+    border: 2px solid #b0d4ce;
+    box-shadow: 0 2px 0 #b0d4ce;
+    display: inline-block;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+
+#list {
+    border: double 2px black;
+}
+
+.pulldown {
+    border-radius: 10%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-weight: bold;
+    border: solid 3px #b0d4ce;
+}

@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    overflow: scroll;
+    background-image:url("white1.jpg");  /* 画像のURLを指定     */
+    background-position: center ;                     /* 画像の表示位置を指定 */
+    background-size: cover;                                 /* 画像のサイズを指定  */
+  }
+  * {
+    box-sizing: border-box;
+  }  
+  
+  header {
+    height: 100px;
+    width: 100vw;
+    background-color: whitesmoke;
+    z-index: 10;
+    display: flex;
+  }
+  .menu_header {
+    top: 100px;
+    margin: 0;
+  }
+  nav {
+    margin: 0 0 0 auto;
+  }
+  
+  nav li {
+    margin-top: 40px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0 16px 0 0;
+    margin: 0;
+  }
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+    position: relative;  /* アンダーバーの位置を決めるための基準 */
+  }
+  
+  /*▽▽ヘッダーリストのアンダーバー▽▽*/
+  li ::after {
+    position: absolute; /*親要素であるaタグを基準に位置を指定*/
+    bottom: 10px; /*アンダーバーが位置する、各リストの下端からの高さ*/
+    left: 0;/*アンダーバーを各リストの左端に指定*/
+    content: ''; /*本来は、擬似要素に入るテキストなどを’’内に指定。今回はアンダーバーなので何も記載しない*/
+    width: 100%; /*アンダーバーの幅は各リストの幅*/
+    height: 2px; /*アンダーバーの高さ（太さ）*/
+    background: #000000; /*アンダーバーの色*/
+    transform: scale(0, 1);/*アンダーバーの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: center top;/*変形（アンダーバーの伸長）の原点を、liの真ん中指定*/
+    transition: transform 0.75s;/*変形の時間*/
+  }
+  
+  li :hover::after {
+    transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+  }
+.headline {
+    color:black;
+    border-bottom:3px solid;
+    width: 300px;
+    font-size:19px;
+}
+.bold{
+    font-size:16px;
+    color:#222222;
+}
+
+ .list{
+  color:black;
+ }
+ 
+ .indent{
+  text-indent: +1rem
+ }

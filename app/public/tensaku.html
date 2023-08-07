@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--端末の画面の幅に合わせる。Webページが表示される倍率は1-->
+    <title>添削</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300">
+    <link rel="stylesheet" href="../static/tensaku.css">
+</head>
+<body>
+<header class="menu_header">
+    <img src="../static/1_copy.png" alt="ロゴ" class="logo"/>
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="wrap">
+        <div class="left">
+            <h2>入力</h2>
+            <label for="input"></label>
+            <textarea id="input" placeholder="添削したい文を入力"></textarea>
+            <div class="buttons">
+                <input type="button" class="btn" id="conform" value="校正"/>
+                <select class="pulldown" id="keigo">
+                    <option value="">謙譲語か尊敬語か</option>
+                    <option value="0">謙譲語</option>
+                    <option value="1">尊敬語</option>
+                </select>
+                <select class="pulldown" id="hankaku">
+                    <option value="">半角か全角か</option>
+                    <option value="1">半角</option>
+                    <option value="0">全角</option>
+                </select>
+            </div>
+        </div>
+        <div class="right">
+            <h2 id="result" class="ugoke">出力</h2>
+            <label for="output" class="output2"></label>
+            <textarea id="output" placeholder="出力結果"></textarea>
+            <!-- <p id="output"></p> -->
+        </div>
+    </div>
+    <div style="display: flex;">
+        <img class="teacher" src="../static/error3.png" alt="エラー">
+<!--        <div class="error">-->
+<!--            <ul id="list">-->
+<!--            </ul>-->
+<!--        </div>-->
+        <table id="table" class="diff" ></table>
+    </div>
+</main>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../static/tensaku.js"></script>
+</html>

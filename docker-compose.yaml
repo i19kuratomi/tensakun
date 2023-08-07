@@ -1,0 +1,10 @@
+services:
+  mecab:
+    container_name: mecab
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5001:5000
+    volumes:
+      - ./app:/usr/app/app
